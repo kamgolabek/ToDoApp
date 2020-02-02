@@ -16,12 +16,12 @@ class _HomePageState extends State<HomePage> {
   TodoItem(id: 1, title: 'Write simple ToDo App', category: 'Career', dueDate: DateTime.now()),
   TodoItem(id: 2, title: 'Choose parents invitation', category: 'Wesele', dueDate: DateTime.now()),
   TodoItem(id: 3, title: 'Read book', category: 'Free time', dueDate: DateTime.now()),
-  TodoItem(id: 4, title: '4', category: 'Career', dueDate: DateTime.now()),
-  TodoItem(id: 5, title: '5', category: 'Wesele', dueDate: DateTime.now()),
-  TodoItem(id: 6, title: '6', category: 'Free time', dueDate: DateTime.now()),
-  TodoItem(id: 7, title: '7', category: 'Career', dueDate: DateTime.now()),
-  TodoItem(id: 8, title: '8', category: 'Wesele', dueDate: DateTime.now()),
-  TodoItem(id: 9, title: '9', category: 'Free time', dueDate: DateTime.now()),
+  // TodoItem(id: 4, title: '4', category: 'Career', dueDate: DateTime.now()),
+  // TodoItem(id: 5, title: '5', category: 'Wesele', dueDate: DateTime.now()),
+  // TodoItem(id: 6, title: '6', category: 'Free time', dueDate: DateTime.now()),
+  // TodoItem(id: 7, title: '7', category: 'Career', dueDate: DateTime.now()),
+  // TodoItem(id: 8, title: '8', category: 'Wesele', dueDate: DateTime.now()),
+  // TodoItem(id: 9, title: '9', category: 'Free time', dueDate: DateTime.now()),
 ];
 
 void completeTask(int id, bool isDone){
@@ -42,6 +42,11 @@ void completeTask(int id, bool isDone){
       body: SingleChildScrollView(
         child: ToDoList(items, completeTask),
       ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: () => {},
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
 }
