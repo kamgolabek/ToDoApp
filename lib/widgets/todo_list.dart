@@ -12,15 +12,29 @@ class ToDoList extends StatelessWidget {
     return Column(
       children: items.map((item) {
         return Card(
+          color: item.done ? Colors.green[100] : Colors.white,
           elevation: 10,
           child: ListTile(
-            title: Text(item.title),
+            title: Text(
+              item.title,
+              style: TextStyle(
+                decoration: item.done ? TextDecoration.lineThrough : null,
+              ),
+            ),
             subtitle: Text(item.category),
-            trailing: Checkbox(
-                value: item.done,
-                onChanged: (isDone) {
-                  onCompleteTaskHandler(item.id, isDone);
-                }),
+            trailing: FittedBox(
+              child: Row(
+                children: <Widget>[
+                  Checkbox(
+                      value: item.done,
+                      onChanged: (isDone) {
+                        onCompleteTaskHandler(item.id, isDone);
+                      }),
+                  IconButton(icon: Icon(Icons.edit), onPressed: null),
+                  IconButton(icon: Icon(Icons.delete), onPressed: null),
+                ],
+              ),
+            ),
           ),
         );
       }).toList(),
